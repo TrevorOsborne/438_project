@@ -1,1 +1,34 @@
-%h1 Sign In Page
+%head
+    = stylesheet_link_tag "themes/#{@theme.downcase}.min"
+%body
+    %div{class: "container"}
+        %form
+            = select_tag "theme", options_for_select(@themes, @theme), :onchange => "this.form.submit();", :class => "custom-select"
+%br
+%br   
+%br
+%div{class: "container"}
+    %div{class: "card mb-3"}
+        %h3{class: "card-header"} Login
+        %div{class: "card-body"}
+            %form#components.form-horizontal{role: "form"}
+                %fieldset
+                    %tab-content
+                        / Tabs of snippets go here
+                        #input.tab-pane.active
+                            %component
+                                / Text input
+                                %form-group
+                                    %h5{class: "card-title", for: "emailinput"} Email
+                                    %col-md-3
+                                    %input#textinput.form-control.input-md{name: "emailinput", 
+                                        style: "cursor: auto; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;", 
+                                        type: "text",
+                                        placeholder: "Enter email"}
+                                    %br
+                                    %h5{class: "card-title", for: "passinput"} Password
+                                    %col-md-3
+                                    %input#textinput.form-control.input-md{name: "passinput", 
+                                        style: "cursor: auto; background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;", 
+                                        type: "password",
+                                        placeholder: "Password"}

@@ -1,0 +1,31 @@
+// lj_ilp
+// Zephyrs
+// 03/16/2019
+// my_blog
+%h1 Create a new blog.
+%form
+    %p Please type your blog.
+    %input{:type => 'test', :name => :blog_subject}
+    %input{:type => 'test', :name => :blog_text}
+    %input{:type => 'submit', :value => 'Submit'}
+
+%div 
+    //%p #{@message}
+    
+%p Your blogs:
+
+%ul
+    -@member_blogs.each do |my_blog|
+        %li= my_blog.subject
+        %li= my_blog.text
+        //%p edit blog button
+
+%div 
+    //%p You have #{@game.guesses} incorrect guesses left.
+    //%p Incorrect guesses: #{@game.incorrect_guesses}
+
+%div
+    //%img{:src => @game.image}
+
+%p
+    //#{@game.game_board}

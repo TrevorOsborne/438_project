@@ -1,0 +1,22 @@
+// lj_ilp
+// Zephyrs
+// 03/16/2019
+// all_blogs
+%h1 All Blogs
+
+%div
+    //%p Post blog button
+
+%p Blog feed:
+
+%ul
+    -@blogs.each do |blog|
+        %li= blog.subject
+        %li= blog.text
+        //%p comment button
+
+%div
+    //%img{:src => @game.image}
+
+%p
+    //#{@game.game_board}
